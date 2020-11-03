@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E682A091254BF69E004D36E8 /* YXCameraManger.h in Headers */ = {isa = PBXBuildFile; fileRef = E682A08F254BF69E004D36E8 /* YXCameraManger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E682A092254BF69E004D36E8 /* YXCameraManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E682A090254BF69E004D36E8 /* YXCameraManger.m */; };
+		E69DB9FB2547C0DE0008A600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DB9FA2547C0DE0008A600 /* AppDelegate.swift */; };
+		E69DB9FF2547C0DE0008A600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DB9FE2547C0DE0008A600 /* ViewController.swift */; };
+		E69DBA022547C0DE0008A600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E69DBA002547C0DE0008A600 /* Main.storyboard */; };
+		E69DBA042547C0E20008A600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E69DBA032547C0E20008A600 /* Assets.xcassets */; };
+		E69DBA072547C0E20008A600 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E69DBA052547C0E20008A600 /* LaunchScreen.storyboard */; };
+		E69DBA422547C2090008A600 /* YXToolSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = E69DBA402547C2090008A600 /* YXToolSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E69DBA452547C2090008A600 /* YXToolSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69DBA3E2547C2090008A600 /* YXToolSDK.framework */; };
+		E69DBA462547C2090008A600 /* YXToolSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E69DBA3E2547C2090008A600 /* YXToolSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E69DBA4D2547C28B0008A600 /* YXToolManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DBA4C2547C28B0008A600 /* YXToolManger.swift */; };
+		E6E95244254EEE2900BAC97A /* YXCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E95243254EEE2900BAC97A /* YXCamera.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E69DBA432547C2090008A600 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E69DB9EF2547C0DE0008A600 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E69DBA3D2547C2090008A600;
+			remoteInfo = YXToolSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E69DBA4A2547C2090008A600 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E69DBA462547C2090008A600 /* YXToolSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E682A08F254BF69E004D36E8 /* YXCameraManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXCameraManger.h; sourceTree = "<group>"; };
+		E682A090254BF69E004D36E8 /* YXCameraManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXCameraManger.m; sourceTree = "<group>"; };
+		E69DB9F72547C0DE0008A600 /* YXTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E69DB9FA2547C0DE0008A600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E69DB9FE2547C0DE0008A600 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E69DBA012547C0DE0008A600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E69DBA032547C0E20008A600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E69DBA062547C0E20008A600 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E69DBA082547C0E20008A600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E69DBA3E2547C2090008A600 /* YXToolSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YXToolSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E69DBA402547C2090008A600 /* YXToolSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXToolSDK.h; sourceTree = "<group>"; };
+		E69DBA412547C2090008A600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E69DBA4C2547C28B0008A600 /* YXToolManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXToolManger.swift; sourceTree = "<group>"; };
+		E6E95243254EEE2900BAC97A /* YXCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCamera.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E69DB9F42547C0DE0008A600 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E69DBA452547C2090008A600 /* YXToolSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E69DBA3B2547C2090008A600 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E69DB9EE2547C0DE0008A600 = {
+			isa = PBXGroup;
+			children = (
+				E69DB9F92547C0DE0008A600 /* YXTools */,
+				E69DBA3F2547C2090008A600 /* YXToolSDK */,
+				E69DB9F82547C0DE0008A600 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E69DB9F82547C0DE0008A600 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E69DB9F72547C0DE0008A600 /* YXTools.app */,
+				E69DBA3E2547C2090008A600 /* YXToolSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E69DB9F92547C0DE0008A600 /* YXTools */ = {
+			isa = PBXGroup;
+			children = (
+				E69DB9FA2547C0DE0008A600 /* AppDelegate.swift */,
+				E69DB9FE2547C0DE0008A600 /* ViewController.swift */,
+				E69DBA002547C0DE0008A600 /* Main.storyboard */,
+				E69DBA032547C0E20008A600 /* Assets.xcassets */,
+				E69DBA052547C0E20008A600 /* LaunchScreen.storyboard */,
+				E69DBA082547C0E20008A600 /* Info.plist */,
+			);
+			path = YXTools;
+			sourceTree = "<group>";
+		};
+		E69DBA3F2547C2090008A600 /* YXToolSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E69DBA402547C2090008A600 /* YXToolSDK.h */,
+				E69DBA4C2547C28B0008A600 /* YXToolManger.swift */,
+				E69DBA412547C2090008A600 /* Info.plist */,
+				E682A08F254BF69E004D36E8 /* YXCameraManger.h */,
+				E682A090254BF69E004D36E8 /* YXCameraManger.m */,
+				E6E95243254EEE2900BAC97A /* YXCamera.swift */,
+			);
+			path = YXToolSDK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E69DBA392547C2090008A600 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E69DBA422547C2090008A600 /* YXToolSDK.h in Headers */,
+				E682A091254BF69E004D36E8 /* YXCameraManger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E69DB9F62547C0DE0008A600 /* YXTools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E69DBA212547C0E20008A600 /* Build configuration list for PBXNativeTarget "YXTools" */;
+			buildPhases = (
+				E69DB9F32547C0DE0008A600 /* Sources */,
+				E69DB9F42547C0DE0008A600 /* Frameworks */,
+				E69DB9F52547C0DE0008A600 /* Resources */,
+				E69DBA4A2547C2090008A600 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E69DBA442547C2090008A600 /* PBXTargetDependency */,
+			);
+			name = YXTools;
+			productName = YXTools;
+			productReference = E69DB9F72547C0DE0008A600 /* YXTools.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E69DBA3D2547C2090008A600 /* YXToolSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E69DBA472547C2090008A600 /* Build configuration list for PBXNativeTarget "YXToolSDK" */;
+			buildPhases = (
+				E69DBA392547C2090008A600 /* Headers */,
+				E69DBA3A2547C2090008A600 /* Sources */,
+				E69DBA3B2547C2090008A600 /* Frameworks */,
+				E69DBA3C2547C2090008A600 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YXToolSDK;
+			productName = YXToolSDK;
+			productReference = E69DBA3E2547C2090008A600 /* YXToolSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E69DB9EF2547C0DE0008A600 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					E69DB9F62547C0DE0008A600 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					E69DBA3D2547C2090008A600 = {
+						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1210;
+					};
+				};
+			};
+			buildConfigurationList = E69DB9F22547C0DE0008A600 /* Build configuration list for PBXProject "YXTools" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E69DB9EE2547C0DE0008A600;
+			productRefGroup = E69DB9F82547C0DE0008A600 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E69DB9F62547C0DE0008A600 /* YXTools */,
+				E69DBA3D2547C2090008A600 /* YXToolSDK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E69DB9F52547C0DE0008A600 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E69DBA072547C0E20008A600 /* LaunchScreen.storyboard in Resources */,
+				E69DBA042547C0E20008A600 /* Assets.xcassets in Resources */,
+				E69DBA022547C0DE0008A600 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E69DBA3C2547C2090008A600 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E69DB9F32547C0DE0008A600 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E69DB9FF2547C0DE0008A600 /* ViewController.swift in Sources */,
+				E69DB9FB2547C0DE0008A600 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E69DBA3A2547C2090008A600 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E682A092254BF69E004D36E8 /* YXCameraManger.m in Sources */,
+				E69DBA4D2547C28B0008A600 /* YXToolManger.swift in Sources */,
+				E6E95244254EEE2900BAC97A /* YXCamera.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E69DBA442547C2090008A600 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E69DBA3D2547C2090008A600 /* YXToolSDK */;
+			targetProxy = E69DBA432547C2090008A600 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E69DBA002547C0DE0008A600 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E69DBA012547C0DE0008A600 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E69DBA052547C0E20008A600 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E69DBA062547C0E20008A600 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E69DBA1F2547C0E20008A600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E69DBA202547C0E20008A600 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E69DBA222547C0E20008A600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2Z2R48WCP;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = YXTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.code.YXTools;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		E69DBA232547C0E20008A600 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2Z2R48WCP;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = YXTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.code.YXTools;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E69DBA482547C2090008A600 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L2Z2R48WCP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				INFOPLIST_FILE = YXToolSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.code.YXToolSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E69DBA492547C2090008A600 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = L2Z2R48WCP;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
+				INFOPLIST_FILE = YXToolSDK/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.code.YXToolSDK;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E69DB9F22547C0DE0008A600 /* Build configuration list for PBXProject "YXTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E69DBA1F2547C0E20008A600 /* Debug */,
+				E69DBA202547C0E20008A600 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E69DBA212547C0E20008A600 /* Build configuration list for PBXNativeTarget "YXTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E69DBA222547C0E20008A600 /* Debug */,
+				E69DBA232547C0E20008A600 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E69DBA472547C2090008A600 /* Build configuration list for PBXNativeTarget "YXToolSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E69DBA482547C2090008A600 /* Debug */,
+				E69DBA492547C2090008A600 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E69DB9EF2547C0DE0008A600 /* Project object */;
+}
