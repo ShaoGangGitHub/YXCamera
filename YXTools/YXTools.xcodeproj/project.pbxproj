@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E62CFF682552341300102049 /* YXFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CFF672552341300102049 /* YXFilter.swift */; };
+		E62CFF6C255252D800102049 /* YXImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CFF6B255252D800102049 /* YXImage.swift */; };
+		E62CFF7225527F3A00102049 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62CFF7025527F3A00102049 /* FilterCollectionViewCell.swift */; };
+		E62CFF7325527F3A00102049 /* FilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E62CFF7125527F3A00102049 /* FilterCollectionViewCell.xib */; };
 		E682A091254BF69E004D36E8 /* YXCameraManger.h in Headers */ = {isa = PBXBuildFile; fileRef = E682A08F254BF69E004D36E8 /* YXCameraManger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E682A092254BF69E004D36E8 /* YXCameraManger.m in Sources */ = {isa = PBXBuildFile; fileRef = E682A090254BF69E004D36E8 /* YXCameraManger.m */; };
+		E683301B25514C9D001956C3 /* YXImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683301A25514C9D001956C3 /* YXImageView.swift */; };
 		E69DB9FB2547C0DE0008A600 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DB9FA2547C0DE0008A600 /* AppDelegate.swift */; };
 		E69DB9FF2547C0DE0008A600 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DB9FE2547C0DE0008A600 /* ViewController.swift */; };
 		E69DBA022547C0DE0008A600 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E69DBA002547C0DE0008A600 /* Main.storyboard */; };
@@ -46,8 +51,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E62CFF672552341300102049 /* YXFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXFilter.swift; sourceTree = "<group>"; };
+		E62CFF6B255252D800102049 /* YXImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXImage.swift; sourceTree = "<group>"; };
+		E62CFF7025527F3A00102049 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		E62CFF7125527F3A00102049 /* FilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		E682A08F254BF69E004D36E8 /* YXCameraManger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXCameraManger.h; sourceTree = "<group>"; };
 		E682A090254BF69E004D36E8 /* YXCameraManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YXCameraManger.m; sourceTree = "<group>"; };
+		E683301A25514C9D001956C3 /* YXImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXImageView.swift; sourceTree = "<group>"; };
 		E69DB9F72547C0DE0008A600 /* YXTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YXTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E69DB9FA2547C0DE0008A600 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E69DB9FE2547C0DE0008A600 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +114,8 @@
 			children = (
 				E69DB9FA2547C0DE0008A600 /* AppDelegate.swift */,
 				E69DB9FE2547C0DE0008A600 /* ViewController.swift */,
+				E62CFF7025527F3A00102049 /* FilterCollectionViewCell.swift */,
+				E62CFF7125527F3A00102049 /* FilterCollectionViewCell.xib */,
 				E69DBA002547C0DE0008A600 /* Main.storyboard */,
 				E69DBA032547C0E20008A600 /* Assets.xcassets */,
 				E69DBA052547C0E20008A600 /* LaunchScreen.storyboard */,
@@ -121,6 +133,9 @@
 				E682A08F254BF69E004D36E8 /* YXCameraManger.h */,
 				E682A090254BF69E004D36E8 /* YXCameraManger.m */,
 				E6E95243254EEE2900BAC97A /* YXCamera.swift */,
+				E683301A25514C9D001956C3 /* YXImageView.swift */,
+				E62CFF6B255252D800102049 /* YXImage.swift */,
+				E62CFF672552341300102049 /* YXFilter.swift */,
 			);
 			path = YXToolSDK;
 			sourceTree = "<group>";
@@ -221,6 +236,7 @@
 			files = (
 				E69DBA072547C0E20008A600 /* LaunchScreen.storyboard in Resources */,
 				E69DBA042547C0E20008A600 /* Assets.xcassets in Resources */,
+				E62CFF7325527F3A00102049 /* FilterCollectionViewCell.xib in Resources */,
 				E69DBA022547C0DE0008A600 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E69DB9FF2547C0DE0008A600 /* ViewController.swift in Sources */,
+				E62CFF7225527F3A00102049 /* FilterCollectionViewCell.swift in Sources */,
 				E69DB9FB2547C0DE0008A600 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -248,9 +265,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E62CFF682552341300102049 /* YXFilter.swift in Sources */,
 				E682A092254BF69E004D36E8 /* YXCameraManger.m in Sources */,
 				E69DBA4D2547C28B0008A600 /* YXToolManger.swift in Sources */,
 				E6E95244254EEE2900BAC97A /* YXCamera.swift in Sources */,
+				E62CFF6C255252D800102049 /* YXImage.swift in Sources */,
+				E683301B25514C9D001956C3 /* YXImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

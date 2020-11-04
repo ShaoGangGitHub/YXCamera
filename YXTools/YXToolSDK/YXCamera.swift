@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// 相机
 @objc public class YXCamera: UIView {
 
     private lazy var session: AVCaptureSession = {
@@ -20,7 +21,6 @@ import UIKit
     private lazy var capLayer:AVCaptureVideoPreviewLayer = {
         let layer = AVCaptureVideoPreviewLayer.init(session: self.session)
         layer.videoGravity = .resizeAspectFill
-        layer.frame = self.bounds
         return layer
     }()
     
@@ -59,7 +59,7 @@ import UIKit
         return delegate
     }()
 
-    public override init(frame: CGRect) {
+    @objc public override init(frame: CGRect) {
         super.init(frame: frame)
         if self.deviceStatus() != .authorized {
             print("未授权")
@@ -180,13 +180,17 @@ import UIKit
         return self.device!.isTorchActive
     }
     
+    public override func layoutSubviews() {
+        self.capLayer.frame = self.bounds
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 // MARK: -- 处理AVCapturePhotoCaptureDelegate代理回调
-class YXCameraDelgate: NSObject ,AVCapturePhotoCaptureDelegate {
+private class YXCameraDelgate: NSObject ,AVCapturePhotoCaptureDelegate {
     
     
     var backimage:((_:UIImage) -> ())?

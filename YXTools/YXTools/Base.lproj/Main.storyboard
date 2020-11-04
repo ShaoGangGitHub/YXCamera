@@ -20,53 +20,95 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VWs-iE-lSE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9V-oT-uBm">
-                                <rect key="frame" x="172" y="607" width="31" height="30"/>
-                                <state key="normal" title="拍照"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9V-oT-uBm">
+                                <rect key="frame" x="162.5" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1hu-HQ-xeY"/>
+                                    <constraint firstAttribute="width" constant="50" id="iof-YK-lAG"/>
+                                </constraints>
+                                <state key="normal" image="paizhao"/>
                                 <connections>
                                     <action selector="拍照事件:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rxk-YF-acC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfI-Zw-aeX">
-                                <rect key="frame" x="50" y="607" width="31" height="30"/>
-                                <state key="normal" title="前置"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bI-DP-dQe">
+                                <rect key="frame" x="315" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="hDb-1X-7FW"/>
+                                    <constraint firstAttribute="width" constant="50" id="ndA-9r-NhE"/>
+                                </constraints>
+                                <state key="normal" image="shoudiantong_guan"/>
+                                <state key="selected" image="shoudiantong_kai"/>
                                 <connections>
-                                    <action selector="qianAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YND-St-qE1"/>
+                                    <action selector="打开手电筒:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZg-tx-mXK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJI-HB-aT4">
-                                <rect key="frame" x="294" y="607" width="31" height="30"/>
-                                <state key="normal" title="后置"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJI-HB-aT4">
+                                <rect key="frame" x="265" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="2j0-WW-qXr"/>
+                                    <constraint firstAttribute="height" constant="50" id="OYE-sw-hKQ"/>
+                                </constraints>
+                                <state key="normal" image="yanjizhushou-shangchuan_houzhishexiangtou"/>
+                                <state key="selected" image="yanjizhushou-shangchuan_qianzhishexiangtou"/>
                                 <connections>
                                     <action selector="houAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zSQ-hN-vNx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bI-DP-dQe">
-                                <rect key="frame" x="164.5" y="557" width="46" height="30"/>
-                                <state key="normal" title="手电筒"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iPl-aa-s3s">
+                                <rect key="frame" x="0.0" y="377" width="375" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="vLe-Dk-fhD"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jMj-ya-a0i">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
                                 <connections>
-                                    <action selector="打开手电筒:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZg-tx-mXK"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="SPx-1j-UX2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Vuq-ts-TT4"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFA-as-9ol">
+                                <rect key="frame" x="26" y="597" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EgA-oF-IOJ"/>
+                                    <constraint firstAttribute="width" constant="50" id="IPD-IR-KYy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" image="lvjing"/>
+                                <connections>
+                                    <action selector="滤镜点击事件:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gvK-Jq-mPD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="1bI-DP-dQe" firstAttribute="leading" secondItem="TJI-HB-aT4" secondAttribute="trailing" id="0IZ-1K-5eO"/>
+                            <constraint firstItem="ZFA-as-9ol" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="2db-GJ-bcr"/>
+                            <constraint firstItem="1bI-DP-dQe" firstAttribute="centerY" secondItem="k9V-oT-uBm" secondAttribute="centerY" id="5E5-EP-8Zb"/>
                             <constraint firstAttribute="bottom" secondItem="VWs-iE-lSE" secondAttribute="bottom" id="Blx-DB-b4O"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k9V-oT-uBm" secondAttribute="bottom" constant="30" id="Cmu-pC-LSj"/>
-                            <constraint firstItem="1bI-DP-dQe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G4i-po-WnZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k9V-oT-uBm" secondAttribute="bottom" constant="20" id="Cmu-pC-LSj"/>
+                            <constraint firstItem="ZFA-as-9ol" firstAttribute="centerY" secondItem="k9V-oT-uBm" secondAttribute="centerY" id="Dvr-yB-E3u"/>
                             <constraint firstItem="TJI-HB-aT4" firstAttribute="centerY" secondItem="k9V-oT-uBm" secondAttribute="centerY" id="M69-7q-FTO"/>
-                            <constraint firstItem="sfI-Zw-aeX" firstAttribute="centerY" secondItem="k9V-oT-uBm" secondAttribute="centerY" id="PtE-vf-YV2"/>
-                            <constraint firstItem="VWs-iE-lSE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tdv-ra-9dF"/>
-                            <constraint firstItem="k9V-oT-uBm" firstAttribute="top" secondItem="1bI-DP-dQe" secondAttribute="bottom" constant="20" id="UBd-C0-anH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TJI-HB-aT4" secondAttribute="trailing" constant="50" id="X3o-At-wpI"/>
+                            <constraint firstItem="VWs-iE-lSE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Tdv-ra-9dF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1bI-DP-dQe" secondAttribute="trailing" constant="10" id="XPI-TC-N7g"/>
                             <constraint firstItem="k9V-oT-uBm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aj2-Jc-fCF"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VWs-iE-lSE" secondAttribute="trailing" id="gEo-6H-FyT"/>
-                            <constraint firstItem="sfI-Zw-aeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="mhX-1Z-ixZ"/>
-                            <constraint firstItem="VWs-iE-lSE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wlV-zo-821"/>
+                            <constraint firstItem="iPl-aa-s3s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cm1-Eb-7eL"/>
+                            <constraint firstAttribute="trailing" secondItem="VWs-iE-lSE" secondAttribute="trailing" id="gEo-6H-FyT"/>
+                            <constraint firstAttribute="trailing" secondItem="iPl-aa-s3s" secondAttribute="trailing" id="o0x-jB-HNO"/>
+                            <constraint firstItem="k9V-oT-uBm" firstAttribute="top" secondItem="iPl-aa-s3s" secondAttribute="bottom" constant="20" id="s2U-5d-7hM"/>
+                            <constraint firstItem="VWs-iE-lSE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wlV-zo-821"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="iPl-aa-s3s" id="LI7-eR-kVS"/>
+                        <outlet property="collectionViewHeight" destination="vLe-Dk-fhD" id="Zna-du-UPe"/>
                         <outlet property="imageView1" destination="VWs-iE-lSE" id="ATH-kq-Tcg"/>
                     </connections>
                 </viewController>
@@ -76,6 +118,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="lvjing" width="100" height="100"/>
+        <image name="paizhao" width="200" height="198"/>
+        <image name="shoudiantong_guan" width="150" height="150"/>
+        <image name="shoudiantong_kai" width="150" height="150"/>
+        <image name="yanjizhushou-shangchuan_houzhishexiangtou" width="200" height="200"/>
+        <image name="yanjizhushou-shangchuan_qianzhishexiangtou" width="200" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterCollectionViewCell" id="gTV-IL-0wX" customClass="FilterCollectionViewCell" customModule="YXTools" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="195" height="318"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="195" height="318"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timg" translatesAutoresizingMaskIntoConstraints="NO" id="ewU-6e-rFy">
+                        <rect key="frame" x="0.0" y="0.0" width="195" height="288"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cic-4v-nWt">
+                        <rect key="frame" x="0.0" y="288" width="195" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="ewU-6e-rFy" secondAttribute="bottom" constant="30" id="2Bd-8y-mhj"/>
+                <constraint firstItem="Cic-4v-nWt" firstAttribute="top" secondItem="ewU-6e-rFy" secondAttribute="bottom" id="4PK-aR-RfX"/>
+                <constraint firstItem="Cic-4v-nWt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5T2-Wn-lQO"/>
+                <constraint firstItem="ewU-6e-rFy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Byb-hK-8n6"/>
+                <constraint firstAttribute="trailing" secondItem="Cic-4v-nWt" secondAttribute="trailing" id="Nbp-eS-v0P"/>
+                <constraint firstItem="ewU-6e-rFy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ua7-Mz-rJN"/>
+                <constraint firstAttribute="trailing" secondItem="ewU-6e-rFy" secondAttribute="trailing" id="i8v-gS-1Bg"/>
+                <constraint firstAttribute="bottom" secondItem="Cic-4v-nWt" secondAttribute="bottom" id="uQ0-Mo-7Ey"/>
+            </constraints>
+            <size key="customSize" width="195" height="318"/>
+            <connections>
+                <outlet property="imageView" destination="ewU-6e-rFy" id="PCh-EZ-frB"/>
+                <outlet property="label" destination="Cic-4v-nWt" id="HJA-C8-gYs"/>
+            </connections>
+            <point key="canvasLocation" x="218.11594202898553" y="200.22321428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="timg" width="658" height="878"/>
+    </resources>
+</document>
