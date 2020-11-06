@@ -44,25 +44,123 @@ import CoreImage
     ///   - filterName: 滤镜名
     ///   - image: 原始图片
     /// - Returns: 目标图片
-    @objc public class func filterToImage(filterName:String,image:UIImage) -> UIImage? {
+    @objc public class func filterToImage(filterName:String,image:UIImage,setFilter:@escaping(_ filter:YXFilter, _ ciImage:CIImage) -> Void) -> UIImage? {
        
-        let ciImage = CIImage.init(image: image)
-        let filter:YXFilter = YXFilter.init(name: filterName)!
-        guard filter.inputKeys.contains("inputImage") else {
+        if let ciImage = CIImage.init(image: image) {
+            guard  let filter:YXFilter = YXFilter.init(name: filterName) else {
+                return nil
+            }
+            setFilter(filter,ciImage)
+            print(filter.description)
+            print(filter.inputKeys)
+            print(filter.outputKeys)
+            guard let outputImage:CIImage = filter.outputImage else {
+                return nil
+            }
+            guard let glContext:EAGLContext = EAGLContext.init(api: .openGLES2) else {
+                return nil
+            }
+            let context:CIContext = CIContext.init(eaglContext: glContext)
+            guard let cgimage:CGImage = context.createCGImage(outputImage, from: outputImage.extent) else {
+                return nil
+            }
+            let newImage:UIImage = UIImage.init(cgImage: cgimage, scale: image.scale, orientation: image.imageOrientation)
+            return newImage
+        }
+        return nil
+    }
+    
+    /// 多个滤镜叠加
+    /// - Parameters:
+    ///   - filters: 滤镜s
+    ///   - image: 原始图片
+    /// - Returns: 目标图片
+    @objc public class func filtersToImage(filters:[YXFilter],image:UIImage) -> UIImage? {
+        if var ciImage:CIImage = CIImage.init(image: image) {
+            for filter:YXFilter in filters {
+                filter.setValue(ciImage, forKey: kCIInputImageKey)
+                guard let outputImage:CIImage = filter.outputImage else {
+                    continue
+                }
+                ciImage = outputImage
+            }
+            guard let glContext:EAGLContext = EAGLContext.init(api: .openGLES2) else {
+                return nil
+            }
+            let context:CIContext = CIContext.init(eaglContext: glContext)
+            guard let cgimage:CGImage = context.createCGImage(ciImage, from: ciImage.extent) else {
+                return nil
+            }
+            let newImage:UIImage = UIImage.init(cgImage: cgimage, scale: image.scale, orientation: image.imageOrientation)
+            return newImage
+        }
+        return nil
+    }
+    
+    /// 生成二维码
+    /// - Parameters:
+    ///   - qrContent: 二维码内容
+    ///   - size: 大小
+    ///   - codeType: qr 二维码  bar 条码
+    /// - Returns: 目标图片
+    @objc public class func filterToCreatQrCode(qrContent:String,size:CGFloat,codeType:YXFilter.QrCodeType) -> UIImage? {
+        var name:String = ""
+        if codeType == .bar {
+            name = "CICode128BarcodeGenerator"
+        }
+        if codeType == .qr {
+            name = "CIQRCodeGenerator"
+        }
+        let filter:YXFilter = YXFilter.init(name: name)!
+        guard let data:Data = qrContent.data(using: .utf8) else {
             return nil
         }
-        filter.setValue(ciImage, forKey: "inputImage")
-        guard let outputImage:CIImage = filter.outputImage else {
+        //设置内容
+        filter.setValue(data, forKey: "inputMessage")
+        if codeType == .qr {
+            //设置纠错级别 L 20%、M 37%、Q 55%、H 65%
+            filter.setValue("M", forKey: "inputCorrectionLevel")
+        }
+        if codeType == .bar {
+            filter.setValue(5, forKey: "inputQuietSpace")
+            filter.setValue(size, forKey: "inputBarcodeHeight")
+        }
+        guard let cioutImage = filter.outputImage else {
             return nil
         }
-        guard let glContext:EAGLContext = EAGLContext.init(api: .openGLES2) else {
+        let imageSize = CGSize(width: size, height: size)
+        let extent:CGRect = cioutImage.extent.integral
+        let scale = min(imageSize.width/extent.width, imageSize.height/extent.height)
+        let width:size_t = size_t(extent.width * scale)
+        let height:size_t = size_t(extent.height * scale)
+        let cs:CGColorSpace = CGColorSpaceCreateDeviceGray()
+        guard let cgContent:CGContext = CGContext.init(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: cs, bitmapInfo: 0) else {
             return nil
         }
-        let context:CIContext = CIContext.init(eaglContext: glContext)
-        guard let cgimage:CGImage = context.createCGImage(outputImage, from: outputImage.extent) else {
+        // 关联GPU
+        guard let glContext:EAGLContext = EAGLContext.init(api: .openGLES3) else {
             return nil
         }
-        let newImage:UIImage = UIImage.init(cgImage: cgimage, scale: image.scale, orientation: image.imageOrientation)
-        return newImage
+        let cicontext:CIContext = CIContext.init(eaglContext: glContext)
+        guard let cgimage:CGImage = cicontext.createCGImage(cioutImage, from: extent) else {
+            return nil
+        }
+        cgContent.interpolationQuality = CGInterpolationQuality.none
+        cgContent.scaleBy(x: scale, y: scale)
+        cgContent.draw(cgimage, in: extent)
+        guard let newCgimage = cgContent.makeImage() else {
+            return nil
+        }
+        return UIImage.init(cgImage: newCgimage, scale: scale, orientation: .up)
+    }
+}
+
+extension YXFilter {
+    
+    @objc public enum QrCodeType:Int {
+        //二维码
+        case qr  = 1
+        //条形码
+        case bar = 2
     }
 }

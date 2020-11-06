@@ -6,6 +6,7 @@
 //
 
 #import "YXCameraManger.h"
+#import <CoreImage/CoreImage.h>
 
 @interface YXCameraManger ()<AVCapturePhotoCaptureDelegate,AVCaptureVideoDataOutputSampleBufferDelegate>
 
@@ -62,7 +63,7 @@
             NSLog(@"捕捉输入异常");
             return nil;
         }
-        
+        [[CIQRCodeDescriptor alloc]init];
         if ([self.captureSession canAddInput:self.captureInput]) {
             [self.captureSession addInput:self.captureInput];
         }

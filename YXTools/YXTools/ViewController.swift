@@ -39,6 +39,8 @@ class ViewController: UIViewController,UICollectionViewDelegate, UICollectionVie
         self.collectionView.register(UINib.init(nibName: "FilterCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "FilterCollectionViewCell")
         self.collectionViewHeight.constant = 0
         
+        let image = YXFilter.filterToCreatQrCode(qrContent: "sssdsdsajldnsjcxzncnxzjlkxnzkjlxmz", size: 200, codeType: .qr)
+        self.imageView1.image = image
     }
     
     //拍照

@@ -8,7 +8,7 @@
 import UIKit
 
 /// 相机
-@objc public class YXCamera: UIView {
+@objc public class YXCamera: UIView ,AVCapturePhotoCaptureDelegate {
 
     private lazy var session: AVCaptureSession = {
         let session = AVCaptureSession.init()
@@ -54,10 +54,7 @@ import UIKit
         return output
     }()
     
-    private lazy var delegate:YXCameraDelgate = {
-        let delegate:YXCameraDelgate = YXCameraDelgate.init()
-        return delegate
-    }()
+    var backimage:((_:UIImage) -> ())?
 
     @objc public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -89,14 +86,14 @@ import UIKit
     
     /// 开始拍照
     @objc public func start(backImage:@escaping((_:UIImage) -> Void)) {
-        self.delegate.backimage = backImage
+        self.backimage = backImage
         let setting = AVCapturePhotoSettings.init(format: [AVVideoCodecKey:AVVideoCodecType.jpeg])
         if self.device!.hasFlash && self.device!.isFlashAvailable {
             if self.capOutput.supportedFlashModes.contains(.auto) {
                 setting.flashMode = .auto
             }
         }
-        self.capOutput.capturePhoto(with: setting, delegate: self.delegate)
+        self.capOutput.capturePhoto(with: setting, delegate: self)
     }
     
     /// 切换前后摄像头
@@ -190,10 +187,31 @@ import UIKit
 }
 
 // MARK: -- 处理AVCapturePhotoCaptureDelegate代理回调
-private class YXCameraDelgate: NSObject ,AVCapturePhotoCaptureDelegate {
+extension YXCamera {
     
+    public func photoOutput(_ output: AVCapturePhotoOutput, didCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        
+    }
     
-    var backimage:((_:UIImage) -> ())?
+    public func photoOutput(_ output: AVCapturePhotoOutput, willBeginCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        
+    }
+    
+    public func photoOutput(_ output: AVCapturePhotoOutput, willCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        
+    }
+    
+    public func photoOutput(_ output: AVCapturePhotoOutput, didFinishCaptureFor resolvedSettings: AVCaptureResolvedPhotoSettings, error: Error?) {
+        
+    }
+    
+    public func photoOutput(_ output: AVCapturePhotoOutput, didFinishRecordingLivePhotoMovieForEventualFileAt outputFileURL: URL, resolvedSettings: AVCaptureResolvedPhotoSettings) {
+        print("11==",resolvedSettings)
+    }
+    
+    public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingLivePhotoToMovieFileAt outputFileURL: URL, duration: CMTime, photoDisplayTime: CMTime, resolvedSettings: AVCaptureResolvedPhotoSettings, error: Error?) {
+        print("22==",resolvedSettings)
+    }
     
     public func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         guard let data = photo.fileDataRepresentation() else { return }

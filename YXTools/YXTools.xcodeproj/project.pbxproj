@@ -23,6 +23,7 @@
 		E69DBA452547C2090008A600 /* YXToolSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69DBA3E2547C2090008A600 /* YXToolSDK.framework */; };
 		E69DBA462547C2090008A600 /* YXToolSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E69DBA3E2547C2090008A600 /* YXToolSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E69DBA4D2547C28B0008A600 /* YXToolManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69DBA4C2547C28B0008A600 /* YXToolManger.swift */; };
+		E6E214F52553CE3E0072C6A3 /* Metal.metal in Sources */ = {isa = PBXBuildFile; fileRef = E6E214F42553CE3E0072C6A3 /* Metal.metal */; };
 		E6E95244254EEE2900BAC97A /* YXCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E95243254EEE2900BAC97A /* YXCamera.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		E69DBA402547C2090008A600 /* YXToolSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YXToolSDK.h; sourceTree = "<group>"; };
 		E69DBA412547C2090008A600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E69DBA4C2547C28B0008A600 /* YXToolManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXToolManger.swift; sourceTree = "<group>"; };
+		E6E214F42553CE3E0072C6A3 /* Metal.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Metal.metal; sourceTree = "<group>"; };
 		E6E95243254EEE2900BAC97A /* YXCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YXCamera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			children = (
 				E69DB9FA2547C0DE0008A600 /* AppDelegate.swift */,
 				E69DB9FE2547C0DE0008A600 /* ViewController.swift */,
+				E6E214F42553CE3E0072C6A3 /* Metal.metal */,
 				E62CFF7025527F3A00102049 /* FilterCollectionViewCell.swift */,
 				E62CFF7125527F3A00102049 /* FilterCollectionViewCell.xib */,
 				E69DBA002547C0DE0008A600 /* Main.storyboard */,
@@ -258,6 +261,7 @@
 				E69DB9FF2547C0DE0008A600 /* ViewController.swift in Sources */,
 				E62CFF7225527F3A00102049 /* FilterCollectionViewCell.swift in Sources */,
 				E69DB9FB2547C0DE0008A600 /* AppDelegate.swift in Sources */,
+				E6E214F52553CE3E0072C6A3 /* Metal.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

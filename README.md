@@ -2,10 +2,11 @@
 iOS 自定义简单相机，支持摄像头切换，手电筒，滤镜，美颜
 
 SDK调用
-import UIKit
-import YXToolSDK
 
-class ViewController: UIViewController {
+    import UIKit
+    import YXToolSDK
+
+    class ViewController: UIViewController {
 
     @IBOutlet weak var imageView1: UIImageView!
     
@@ -53,4 +54,4 @@ class ViewController: UIViewController {
         self.camView.changeCam(position: .back)
     }
 
-}
+    }

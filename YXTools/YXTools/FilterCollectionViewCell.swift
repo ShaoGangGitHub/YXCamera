@@ -20,11 +20,24 @@ class FilterCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func tapAction(sender:UITapGestureRecognizer) {
-        let newImage = YXFilter.filterToImage(filterName: self.label.text!, image: self.imageView.image!)
-        if newImage == nil {
-            self.imageView.image = UIImage.init(named: "timg")
-        } else {
-            self.imageView.image = newImage
+        weak var weakSelf = self
+        let text:String = self.label.text ?? ""
+        let image:UIImage = self.imageView.image ?? UIImage.init(named: "timg")!
+        self.contentView.isUserInteractionEnabled = false
+        DispatchQueue.global().async {
+            let newImage = YXFilter.filterToImage(filterName: text, image: image) { (filter, ciimage) in
+                if filter.inputKeys.contains("inputImage") {
+                    filter.setValue(ciimage, forKey: "inputImage")
+                }
+            }
+            DispatchQueue.main.async {
+                if newImage == nil {
+                    weakSelf?.imageView.image = UIImage.init(named: "timg")
+                } else {
+                    weakSelf?.imageView.image = newImage
+                }
+                weakSelf?.contentView.isUserInteractionEnabled = true
+            }
         }
     }
 
