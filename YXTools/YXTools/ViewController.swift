@@ -42,8 +42,12 @@ class ViewController: UIViewController,UICollectionViewDelegate, UICollectionVie
         let image = YXFilter.filterToCreatQrCode(qrContent: "sssdsdsajldnsjcxzncnxzjlkxnzkjlxmz", size: 200, codeType: .qr)
         self.imageView1.image = image
         
-        let image1 = YXFilter.filterToCreatQrCodeWithColor(color: .red, backColor: .green, qrContent: "ssssdsdkj123", size: 200, codeType: .qr)
+        let image1 = YXFilter.filterToCreatQrCodeWithColor(color: .red, backColor: .white, qrContent: "ssssdsdkj123", size: 200, codeType: .qr)
         self.imageView1.image = image1
+        
+        let image2 = YXFilter.filterToCreatQrCodeWithImage(centerImage: UIImage.init(named: "timg")!, centerImageSize: CGSize(width: 60, height: 60), qrContent: "8ibhaxbsbhja", size: 200)
+        self.imageView1.image = image2
+        
     }
     
     //拍照

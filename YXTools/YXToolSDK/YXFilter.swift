@@ -119,7 +119,7 @@ import CoreImage
         filter.setValue(data, forKey: "inputMessage")
         if codeType == .qr {
             //设置纠错级别 L 20%、M 37%、Q 55%、H 65%
-            filter.setValue("M", forKey: "inputCorrectionLevel")
+            filter.setValue("Q", forKey: "inputCorrectionLevel")
         }
         if codeType == .bar {
             filter.setValue(5, forKey: "inputQuietSpace")
@@ -181,6 +181,28 @@ import CoreImage
             return nil
         }
         return UIImage.init(ciImage: outimage, scale: UIScreen.main.scale, orientation: .up)
+    }
+    
+    /// 生成二维码，中间带图片
+    /// - Parameters:
+    ///   - centerImage: 二维码中的图片
+    ///   - centerImageSize: 二维码中图片的大小
+    ///   - qrContent: 二维码内容
+    ///   - size: 二维码大小
+    /// - Returns: 目标二维码图片
+    @objc public class func filterToCreatQrCodeWithImage(centerImage:UIImage,centerImageSize:CGSize,qrContent:String,size:CGFloat) -> UIImage? {
+        guard let image = self.filterToCreatQrCode(qrContent: qrContent, size: size, codeType: .qr) else {
+            return nil
+        }
+        let newImageSize = CGSize(width: size, height: size)
+        let newImageRect = CGRect.init(origin: CGPoint.zero, size: newImageSize)
+        let centerRcte = CGRect(x: (size - centerImageSize.width)/2, y: (size - centerImageSize.height)/2, width: centerImageSize.width, height: centerImageSize.height)
+        UIGraphicsBeginImageContextWithOptions(newImageSize, true, image.scale)
+        image.draw(in: newImageRect)
+        centerImage.draw(in: centerRcte)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
 }
 
