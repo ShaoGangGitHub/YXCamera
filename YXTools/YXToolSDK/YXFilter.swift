@@ -133,8 +133,8 @@ import CoreImage
         let scale = min(imageSize.width/extent.width, imageSize.height/extent.height)
         let width:size_t = size_t(extent.width * scale)
         let height:size_t = size_t(extent.height * scale)
-        let cs:CGColorSpace = CGColorSpaceCreateDeviceGray()
-        guard let cgContent:CGContext = CGContext.init(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: cs, bitmapInfo: 0) else {
+        let cs:CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        guard let cgContent:CGContext = CGContext.init(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: cs, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) else {
             return nil
         }
         // 关联GPU
@@ -152,6 +152,35 @@ import CoreImage
             return nil
         }
         return UIImage.init(cgImage: newCgimage, scale: scale, orientation: .up)
+    }
+    
+    /// 生成二维码
+    /// - Parameters:
+    ///   - color: 二维码颜色
+    ///   - backColor: 二维码背景色
+    ///   - qrContent: 二维码内容
+    ///   - size: 大小尺寸
+    ///   - codeType: .qr 二维码 .bar 条码
+    /// - Returns: 目标二维码
+    @objc public class func filterToCreatQrCodeWithColor(color:UIColor,backColor:UIColor,qrContent:String,size:CGFloat,codeType:YXFilter.QrCodeType) -> UIImage? {
+        guard let image = self.filterToCreatQrCode(qrContent: qrContent, size: size, codeType: codeType) else {
+            return nil
+        }
+        guard let filter = YXFilter.init(name: "CIFalseColor") else {
+            return nil
+        }
+        guard let ciimage = CIImage.init(image: image) else {
+            return nil
+        }
+        let ciColor = CIColor.init(color: color)
+        let ciBackColor = CIColor.init(color: backColor)
+        filter.setValue(ciimage, forKey: "inputImage")
+        filter.setValue(ciColor, forKey: "inputColor0")
+        filter.setValue(ciBackColor, forKey: "inputColor1")
+        guard let outimage = filter.outputImage else {
+            return nil
+        }
+        return UIImage.init(ciImage: outimage, scale: UIScreen.main.scale, orientation: .up)
     }
 }
 
